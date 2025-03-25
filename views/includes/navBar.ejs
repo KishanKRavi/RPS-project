@@ -1,0 +1,65 @@
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Allan:wght@400;700&family=Doto:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rubik+Dirt&family=Rubik+Doodle+Shadow&family=Sedgwick+Ave+Display&display=swap" rel="stylesheet">
+    <link rel="icon" href="/images/logo5.jpg" type="image/x-icon">
+</head>
+
+<nav class="navbar navbar-expand-md  Rubik">
+    <div class="container-fluid">
+        
+      <span class="navTitle" href="#">
+        <img src="/images/logo5.jpg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+         <i><p class="p"></p></i>
+      </span>
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      
+      <div class="collapse navbar-collapse navOptions index-page " id="navbarSupportedContent">
+            
+            <a class="nav-link" href="/">Home</a>
+            <a class="nav-link showOverlay" title="Rules" content="<hr><p><i>Rock-Paper-Scissors is a classic two-player game. <br>Each player simultaneously selects one of three options:</p>
+                </i><ul>
+                    <li><b>Rock (✊)</b> - A fist</li>
+                    <li><b>Paper (✋)</b> - An open hand</li>
+                    <li><b>Scissors (✌️)</b> - A V-shape with index and middle fingers</li>
+                </ul>
+                <p><b>Winning Rules:</b></p>
+                <ul>
+                    <li>Rock wins when,✊ Rock crushes ✌️ Scissors</li>
+                    <li>Scissors wins when,✌️ Scissors cuts ✋ Paper</li>
+                    <li>Paper wins when,✋Paper covers ✊Rock</li>
+                </ul>
+                <b>Tie: </b> <i>If both players choose the same shape, the round is a tie, and they play again.</i>
+                <p>
+                    <b>Maximum</b> score is <b>5</b>, the player with the most wins at the end of the game is the winner.
+                </p>    
+                ">How To Play</a>
+            <a class="nav-link" href="/about">About</a>
+            <a class="nav-link" href="#" id="toggleSound">🔊</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="overlay " id="overlay">
+    <div class="overlay-content">
+        <h2 class=" rubik-bold" id="overlayTitle"></h2>
+        <p id="overlayText">content</p>
+        <button id="closeOverlay">Close</button>           
+    </div>
+  </div>
+  
+  <div class="video-container">
+      <video autoplay loop muted playsinline>
+          <source src="video/backg.mp4" type="video/mp4">
+      </video>
+  </div>
+
+ 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/js/script.js"></script>

@@ -1,0 +1,19 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+</head>
+<body>
+    <%- include('includes/navBar.ejs') %>
+    <%- include('includes/goBackBtn.ejs')%>
+    
+    <div class="container text-center " style="padding-top: 8rem;">
+        <input type="text" id="name" class="form-control-sm rubik-bold" placeholder="ENTER YOUR NAME" required oninput="this.value = this.value.toUpperCase()"> <br><br>
+        <button onclick="createGame()" >Create Game</button> &nbsp;
+        <button onclick="joinGame()" >Join Game</button>
+    </div>
+    
+</body>
+</html>

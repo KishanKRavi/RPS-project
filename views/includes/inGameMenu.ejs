@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Allan:wght@400;700&family=Doto:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rubik+Dirt&family=Rubik+Doodle+Shadow&family=Sedgwick+Ave+Display&display=swap" rel="stylesheet">
+ 
+</head>
+<body>
+
+  <span class="navTitle " href="#" style="width: fit-content;">
+    <img src="/images/logo5.jpg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+     <i><p class="p"></p></i>
+  </span>
+
+  <!-- In-game menu button -->
+  <a class="inGameMenu" onclick="showMenu()">
+    <i class="fa-solid fa-ellipsis-vertical"></i>
+  </a>
+
+  <!-- Menu Overlay -->
+  <div class="menuOverlay Rubik" >
+    <a href="/">Home</a>
+    <a class="showOverlay" title="Rules" content="
+      <hr><p><i>Rock-Paper-Scissors is a classic two-player game.<br>Each player simultaneously selects one of three options:</i></p>
+      <ul>
+          <li><b>Rock (✊)</b> - A fist</li>
+          <li><b>Paper (✋)</b> - An open hand</li>
+          <li><b>Scissors (✌️)</b> - A V-shape with index and middle fingers</li>
+      </ul>
+      <p><b>Winning Rules:</b></p>
+      <ul>
+          <li>Rock wins when ✊ crushes ✌️ Scissors</li>
+          <li>Scissors wins when ✌️ cuts ✋ Paper</li>
+          <li>Paper wins when ✋ covers ✊ Rock</li>
+      </ul>
+      <b>Tie:</b> <i>If both players choose the same shape, the round is a tie, and they play again.</i>
+      <p><b>Maximum</b> score is <b>5</b>, the player with the most wins at the end of the game is the winner.</p>    
+    ">How To Play</a>
+    <a href="/about">About</a>
+    <a href="#" id="toggleSound">🔊</a>
+  </div>
+
+  <!-- Overlay for showing content -->
+  <div id="overlay" class="overlay">
+    <div class="overlay-content">
+      <h2 id="overlayTitle"></h2>
+      <div id="overlayText"></div>
+      <button id="closeOverlay">Close</button>
+    </div>
+  </div>
+
+  <script src="/js/script.js"></script>  <!-- External JS file -->
+</body>
+</html>

@@ -1,0 +1,91 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+<body class="inGameLobby">
+    <%- include('includes/inGameMenu.ejs') %>
+    <%- include('includes/goBackBtn.ejs')%>
+    <br><br>
+    <video class="inGameLobbyBackground" src="/video/fistBump.mp4" autoplay loop muted  ></video>
+    <img id="inGameBackgroundImage" src="/images/lobbyBackground.jpg" alt="" style="display: none;">
+    <div class="roomIDdiv">
+        <div>Room ID</div>
+       <div id="roomId"></div>
+    </div>
+
+    <div id="displayName">
+        <div id="playerName"></div>
+        <p id="wait">Waiting for a player to join using the ROOM ID </p>
+    </div>
+ 
+
+    
+    <div id="players">
+        <span id="player1"></span> 
+        <span id="player2"></span> 
+    </div>
+    <div class="playersScore"  style="display: none;">
+        <span id="score1">0</span>  - <span id="score2">0</span>
+    </div>
+
+    <div id="gameArea" style="display: none;">
+        <div class="btnContainer">
+            <button onclick="sendChoice('rock')">Rock</button>
+            <button onclick="sendChoice('paper')">Paper</button>
+            <button onclick="sendChoice('scissors')">Scissors</button>
+        </div>
+    
+        <h3 id="roundResult"></h3>
+         <!-- Display winner name here -->
+    </div>
+    <h3 id="winnerMessage" ></h3>
+
+    <script>
+        const socket = io();
+        const urlParams = new URLSearchParams(window.location.search);
+        const playerName = urlParams.get("name");
+        const roomId = window.location.pathname.split("/").pop();
+
+        document.getElementById("roomId").innerText = roomId;
+        document.getElementById("playerName").innerText = playerName;
+
+        socket.emit("joinRoom", { roomId, playerName });
+        
+
+        socket.on("startGame", (players) => {
+            document.getElementById("player1").innerText = players[0]?.name ;
+            document.getElementById("player2").innerText = players[1]?.name ;
+            document.getElementById("gameArea").style.display = players.length === 2 ? "block" : "none";
+            document.getElementById("displayName").style.display="none";
+            document.getElementsByClassName("inGameLobbyBackground")[0].style.display = "none";
+            document.getElementById("inGameBackgroundImage").style.display = "block";
+            document.getElementsByClassName("playersScore")[0].style.display = "block";
+        });
+
+        function sendChoice(choice) {
+            socket.emit("playerChoice", { roomId, choice });
+        }
+
+        socket.on("roundResult", ({ result, scores }) => {
+            document.getElementById("roundResult").innerText = `${result}`;
+            document.getElementById("score1").innerText = scores[Object.keys(scores)[0]] || 0;
+            document.getElementById("score2").innerText = scores[Object.keys(scores)[1]] || 0;
+        });
+
+        socket.on("gameOver", ({ winner }) => {
+            document.getElementById("winnerMessage").innerText = `🏆 ${winner} Won the match! 🏆`;
+            document.getElementById("gameArea").style.display = "none";
+        });
+
+        socket.on("opponentLeft", () => {
+            document.getElementById("roundResult").innerText = "Your opponent left!";
+            document.getElementById("gameArea").style.display = "none";
+        });
+    </script>
+    
+</body>
+</html>

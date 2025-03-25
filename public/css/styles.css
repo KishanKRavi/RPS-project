@@ -1,0 +1,413 @@
+*{
+    cursor:grab;
+}
+
+*:active{
+    cursor:grabbing;
+}
+.Rubik{
+    font-family: "Rubik Dirt", system-ui!important;
+    font-size: 1.2rem;
+}
+.rubik-bold{
+    font-family: "Rubik Doodle Shadow", system-ui !important;
+    font-weight: 600;
+    font-size: 1.5rem;
+    font-style: italic;
+    text-shadow: 5px 5px 5px rgba(63, 63, 63, 0.76);
+}
+
+.homeTitle{
+    /* font-family: "Sedgwick Ave Display", cursive; */
+    font-family: "Doto", sans-serif;
+    padding-top:5% ; 
+    font-size:8rem;
+    font-weight: 900;
+    color: black;
+    text-shadow: 7px 7px 12px rgb(255, 255, 255);
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+button{
+    font-family: "Rubik Doodle Shadow", system-ui !important;
+    font-weight: bolder;
+    font-size: 1rem;
+    border: 2px solid rgb(7, 7, 7);
+    padding: 8px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.61);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.302);
+}
+button:hover{
+    background-color: rgba(255, 255, 255, 0.082);
+    color: rgb(0, 0, 0);
+    border: 2px solid rgb(255, 255, 255);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.842);
+}
+
+.playnowbtn{
+    position: sticky;
+    bottom: 5%;
+}
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: rgba(255, 12, 12, 0);
+    position: fixed;
+    width: 100%;
+    transition: 0.5s ease-in-out;
+}
+.navTitle{
+    display: flex;
+    justify-content: space-between;
+    padding: 3px 10px 3px 3px;
+    font-size: 1.2rem;
+    color: #000000;
+    height: 35px;
+    align-items: center;
+    border-radius: 25px;
+    background-color: rgba(255, 255, 255, 0.705);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+
+}
+.navTitle img{
+  margin-right: 10px;
+  border-radius: 15px;
+  height: 30px;
+  width: 30px;
+}
+.navTitle p{
+    margin: auto;
+}
+
+.navOptions {
+    position: absolute;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    text-decoration: none;
+    color: black;
+
+}
+.navTitle p::after{
+    content: "Rock Paper Scissors - Multiplayer Game";
+}
+@media (max-width: 768px) {
+    .navOptions {
+        position: relative;
+    }
+    .navTitle .p::after{
+        content: "Rock Paper Scissors ";
+    }
+    .homeTitle{
+        font-size:5rem;
+    }
+}
+
+
+.navOptions a{
+    padding: 0 5px 0 5px;
+    border: 2px solid rgba(125, 125, 125, 0);
+    margin: 5px;
+    background-color: rgba(255, 255, 255, 0.705);
+    border-radius: 25px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+.navOptions a:hover{
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 25px;
+    background-color: rgb(253, 253, 253);
+    color: #000000; 
+    box-shadow: 7px 7px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Index Page */
+.index-page {
+    transition: 0.2s  ease-in-out;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 2;
+    transition: opacity 0.1s ease-in-out, visibility ;
+}
+
+/* Overlay Content */
+.overlay-content {
+    background: rgb(255, 255, 255);
+    padding: 30px;
+    width: 80%;
+    height: 80% ;
+    flex-wrap: wrap;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 20px;
+    overflow-y:scroll;
+    scroll-behavior: smooth;
+    
+}
+
+.overlay.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/* Video container */
+.video-container {
+    position: fixed;
+    width: 100%;
+    height: 88%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+/* Video styling */
+.video-container video {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(5px); 
+    z-index: -1;
+}
+
+/* playnowpage */
+.form-control-sm{
+    background-color: #ffffff69;
+    text-align: center;
+    border-radius: 10px;
+    border: 2px solid rgb(255, 255, 255) !important;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    color: black;
+    font-size: xx-large;
+    letter-spacing: 5px;
+   
+}
+@media (max-width: 768px) {
+    .form-control-sm{
+        width: 95% !important;
+    }
+    .form-control-sm::placeholder{
+        letter-spacing: -1px;
+    }
+}
+
+
+.form-control-sm::placeholder , .form-control-sm::first-line{
+    color: rgb(0, 0, 0);
+    font-size: 2.2rem !important;
+}
+
+
+.goBackBtn{
+    position:fixed;
+    bottom: 5%;
+    left: 2.2%;
+}
+
+/* Game Page */
+.inGameLobby{
+    font-family: "Rubik Doodle Shadow", system-ui !important;
+}
+/* inGameMenu */
+.inGameMenu {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    font-size: 1.2rem;
+    height: 1.5rem; /* Increased to compensate for the border */
+    width: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    border: 2px solid transparent; /* Set default border to maintain size */
+    border-radius: 25px;
+    transition: border 0.2s ease-in-out; /* Smooth transition */
+}
+
+.inGameMenu:hover {
+    border: 2px solid rgb(0, 0, 0);
+}
+
+.menuOverlay{
+    position:fixed;
+    top: 55px;
+    right: 50px;
+    height: fit-content;
+    width: fit-content;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 10px;
+    display: none;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 5px;
+    z-index: 1;
+    background-color: #2f00ff21;
+}
+.menuOverlay.show {
+    display: flex;
+}
+.menuOverlay a{
+    padding: 5px;
+    margin: 2px;
+    color: black;
+    text-decoration: none;
+    font-size: small !important;
+    border: 2px solid rgba(125, 125, 125, 0);
+    background-color: rgba(255, 255, 255, 0.705);
+    border-radius: 25px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    transition: 0.2s ease-in-out;
+}
+.menuOverlay a:hover{
+    transform: scale(1.05);
+    background-color: white;
+}
+
+.inGameLobbyBackground {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    object-position: center;
+    filter: blur(3px);
+    transform: scale(1.7); /* Zoom into the center */
+    z-index: -1; /* Puts video behind other content */
+  }
+
+#inGameBackgroundImage {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+}   
+
+.roomIDdiv{
+    height: 33px;
+    width: 80px;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.705);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    font-weight: 500;
+    text-align: center;
+    padding: 3px;
+    font-size: small;
+    position: fixed;
+    right: 5rem;
+    top:8px;
+    #roomId{
+        font-size: 1.2rem !important;
+        font-weight: 900 !important;
+        color: rgb(101, 89, 207);
+        
+    }
+    
+}
+
+#displayName{
+    text-align: center;
+    font-size: 1.7rem;
+    font-weight: 900;
+    color: rgb(0, 0, 0);
+    text-shadow: 2px 2px 5px rgba(151, 151, 151, 0.5);
+    #wait{
+        font-weight: 100;
+    }
+}
+
+#players{
+    font-family: "Rubik Dirt", system-ui!important;
+    font-style: italic;
+    font-size: 1.5rem;
+    position: absolute;
+    top: 18%;
+    display: flex;
+    height: 80px;
+    width: 100vw;
+    justify-content: space-between;
+    span{
+        padding: 10px;
+    }
+}
+
+.playersScore {
+    display: flex;
+    justify-content: center; /* Centers items horizontally */
+    align-items: center; /* Centers items vertically */
+    gap: 20px; /* Adds space between elements */
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem; /* Adjust font size as needed */
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.1); /* Optional: background */
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.playersScore span {
+    min-width: 50px; 
+    text-align: center;
+}
+/* button of game */
+#gameArea{
+    position: fixed;
+    bottom: 10%;
+    width: 100vw;
+    display: flex;
+    justify-content: space-evenly;
+    .btnContainer{
+        width: 98vw;
+        display: flex;
+        justify-content: space-evenly;
+    }
+}
+
+#roundResult{
+    position: fixed;
+    top: 50%;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 900;
+    color: rgb(0, 0, 0);
+    text-shadow: 2px 2px 5px rgba(151, 151, 151, 0.5);
+}
+
+#winnerMessage{
+    position: fixed;
+    top: 60%;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 900;
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 5px rgba(151, 151, 151, 0.5);
+}
