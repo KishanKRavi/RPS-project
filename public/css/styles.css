@@ -411,3 +411,10 @@ button:hover{
     color: rgb(255, 255, 255);
     text-shadow: 2px 2px 5px rgba(151, 151, 151, 0.5);
 }
+
+#playerChoices{
+    width: 98vw;
+    display: flex;
+    justify-content: space-between;
+    font-size:1.5rem ;
+}

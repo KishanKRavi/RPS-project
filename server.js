@@ -55,11 +55,14 @@ io.on("connection", (socket) => {
 
             let winner = determineWinner(choice1, choice2, player1.name, player2.name);
 
+            io.to(roomId).emit("showChoices", [choice1, choice2]);
+
             if (winner === player1.name) {
                 rooms[roomId].scores[player1.id]++;
             } else if (winner === player2.name) {
                 rooms[roomId].scores[player2.id]++;
             }
+
 
             io.to(roomId).emit("roundResult", {
                 result: winner === "Draw" ? "Draw" : `${winner} won this round!`,

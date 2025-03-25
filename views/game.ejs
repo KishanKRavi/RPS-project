@@ -22,8 +22,6 @@
         <p id="wait">Waiting for a player to join using the ROOM ID </p>
     </div>
  
-
-    
     <div id="players">
         <span id="player1"></span> 
         <span id="player2"></span> 
@@ -31,6 +29,8 @@
     <div class="playersScore"  style="display: none;">
         <span id="score1">0</span>  - <span id="score2">0</span>
     </div>
+
+    <div id="playerChoices"></div>
 
     <div id="gameArea" style="display: none;">
         <div class="btnContainer">
@@ -69,6 +69,13 @@
         function sendChoice(choice) {
             socket.emit("playerChoice", { roomId, choice });
         }
+
+        socket.on("showChoices", (choices) => {
+            document.getElementById("playerChoices").innerHTML = `
+                <p> ${choices[0]}</p>
+                <p> ${choices[1]}</p>
+            `;
+        });
 
         socket.on("roundResult", ({ result, scores }) => {
             document.getElementById("roundResult").innerText = `${result}`;
